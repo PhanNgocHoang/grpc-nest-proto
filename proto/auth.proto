@@ -1,4 +1,4 @@
-syntax = "proto3"
+syntax = "proto3";
 package auth;
 
 service AuthService {
@@ -7,7 +7,7 @@ service AuthService {
 
     rpc Login (LoginRequest) returns (LoginResponse) {}
 
-    rpc Validate (ValidateRequest) return (ValidateResponse) {}
+    rpc Validate (ValidateRequest) returns (ValidateResponse) {}
 
 }
 
@@ -26,10 +26,9 @@ service AuthService {
 
 // Login
 
-    message LoginResponse {
+    message LoginRequest {
         string email = 1;
-        repeated string error = 2;
-        string token  = 3;
+        string password =2 ;
     }
 
     message LoginResponse {
